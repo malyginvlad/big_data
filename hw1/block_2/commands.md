@@ -25,23 +25,23 @@ hdfs dfs -rm -r /new_folder/block_2
 
 1. Скопируйте любой в новую папку на HDFS
 ```
-hdfs fs -cp /new_folder/block_2/new_file.txt /new_folder/new_block_2
+hdfs dfs -cp /new_folder/block_2/new_file.txt /new_folder/new_block_2
 ```
 2. Выведите содержимое HDFS-файла на экран.
 ```
-hdfs fs -cat /new_folder/block_2/new_file.txt
+hdfs dfs -cat /new_folder/block_2/new_file.txt
 ```
 3. Выведите содержимое нескольких последних строчек HDFS-файла на экран.
 ```
-hdfs fs -tail /new_folder/block_2/new_file.txt
+hdfs dfs -tail /new_folder/block_2/new_file.txt
 ```
 4. Выведите содержимое нескольких первых строчек HDFS-файла на экран.
 ```
-hdfs fs -head /new_folder/block_2/new_file.txt
+hdfs dfs -head /new_folder/block_2/new_file.txt
 ```
 5. Переместите копию файла в HDFS на новую локацию.
 ```
-hdfs fs -put /new_folder/block_2/new_file.txt /new_folder/new_block_2
+hdfs dfs -put /new_folder/block_2/new_file.txt /new_folder/new_block_2
 ```
 
 2. Изменить replication factor для файла. Как долго занимает время на увеличение /
