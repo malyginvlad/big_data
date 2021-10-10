@@ -8,7 +8,6 @@ def read_csv_input(file):
 def main():
     price_num_col = 0
     for i, line in enumerate(read_csv_input(sys.stdin)):
-        #item_list = line.split(',')
         if i == 0:
             for j, item in enumerate(line):
     	        if item == 'price':
