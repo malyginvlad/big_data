@@ -3,13 +3,13 @@ import sys
 
 
 def calc_mean(chunk_size_prev, mean_prev, chunk_size_cur, mean_cur):
-    return (chunk_size_prev * mean_prev + chunk_size_cur * mean_cur) / (chunk_size_prev + chunk_size_cur)
-
+    mean_value = (chunk_size_prev * mean_prev + chunk_size_cur * mean_cur) / (chunk_size_prev + chunk_size_cur)
+    return mean_value
 
 def calc_var(chunk_size_prev, var_prev, mean_prev, chunk_size_cur, mean_cur, var_cur):
-    first = (chunk_size_prev * var_prev + chunk_size_cur * var_cur) / (chunk_size_prev + chunk_size_cur)
-    second = chunk_size_prev * chunk_size_cur * (((mean_prev - mean_cur) / (chunk_size_prev + chunk_size_cur)) ** 2)
-    return first + second
+    var_value = (chunk_size_prev * var_prev + chunk_size_cur * var_cur) / (chunk_size_prev + chunk_size_cur)
+    var_value += chunk_size_prev * chunk_size_cur * (((mean_prev - mean_cur) / (chunk_size_prev + chunk_size_cur)) ** 2)
+    return var_value
 
 def main():
     chunk_size = 0
@@ -18,7 +18,7 @@ def main():
     chunk_size_prev = 0
 
     for line in sys.stdin:
-        (key, value) = line.strip().split("\t")
+        key, value = line.strip().split("\t")
         key = float(key)
         value = float(value)
 
