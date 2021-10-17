@@ -25,7 +25,9 @@ FROM artist
 WHERE scrobbles_lastfm IN ( select * from tmp_table)
 ```
 artist_lastfm
+
 The Beatles
+
 3. Самый популрный тэг на lastfm
 ```
 with tmp_table as (
@@ -42,7 +44,9 @@ with tmp_table as (
 SELECT trim_tag FROM tmp_table
 ```
 trim_tag
+
 seen live
+
 4. Самые популярные исполнители 10 самых популярных тегов
 ```
 with tmp_artists as (
@@ -75,16 +79,27 @@ ORDER BY scrobbles_lastfm DESC
 LIMIT 10
 ```
 artist_lastfm	scrobbles_lastfm
+
 The Beatles	517126254
+
 Radiohead	499548797
+
 Coldplay	360111850
+
 Muse	344838631
+
 Arctic Monkeys	332306552
+
 Pink Floyd	313236119
+
 Linkin Park	294986508
+
 Red Hot Chili Peppers	293784041
+
 Lady Gaga	285469647
+
 Metallica	281172228
+
 5. Самые популярные исполнители в России 10 самых популярных тегов 
 ```
 with tmp_artists as (
@@ -119,13 +134,23 @@ ORDER BY scrobbles_lastfm DESC
 LIMIT 10
 ```
 artist_lastfm	scrobbles_lastfm
+
 Сплин	30642848
+
 t.A.T.u.	24282244
+
 Zемфира	22106841
+
 Noize MC	20772736
+
 Король и Шут	18910852
+
 Lumen	17579969
+
 Pyotr Ilyich Tchaikovsky	14454743
+
 Кино	14012892
+
 Ария	13728661
+
 Ленинград	12989989
